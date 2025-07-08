@@ -22,7 +22,7 @@ const CoursesSection = ({title, desc, icon, bg, index}) => {
     const randomNum = getRandomNumber();
 
     const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [0,randomNum, 5])
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0,1, 1])
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [1,1,1] : [0,1, 1])
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0,1, 1])
 
     console.log(isSmallScreen )
