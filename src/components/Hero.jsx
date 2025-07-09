@@ -17,7 +17,7 @@ const Hero = () => {
             </div>
         </div>
 
-        <div style={{background: `url(${bg})`}} className="w-full h-full lg:h-screen bg-cover bg-no-repeat lg:bg-center bg-bottom p-8 rounded-3xl rounded-bl-[90px] pt-20">
+        <div style={{background: `url(${bg})`}} className="w-full h-full lg:h-screen !bg-cover bg-no-repeat lg:bg-center bg-bottom p-8 rounded-3xl rounded-bl-[90px] pt-20">
             <img className='object-contain h-full w-full rounded-bl-2xl' src={bgGirl}/>
         </div>
     </div>

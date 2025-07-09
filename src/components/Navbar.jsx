@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
 
       <nav className='w-max lg:block hidden'>
-        <ul className={`w-full flex items-center gap-10 ${visible ? 'text-black' : 'text-white'}  font-semibold`}>
+        <ul className={`w-full flex items-center gap-10 ${visible ? 'text-black/60' : 'text-white'}  font-bold`}>
           <li>Home</li>
           <li>Courses</li>
           <li>Why Us</li>

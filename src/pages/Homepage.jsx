@@ -5,6 +5,8 @@ import CoursesSection from '../components/Courses'
 import { FaCode, FaPalette, FaLaptopCode } from 'react-icons/fa';
 import { motion, useScroll, useTransform} from 'motion/react';
 import bg from '../assets/bg-hero1.png';
+import About from '../components/About';
+import WhyUs from '../components/WhyUs';
 
 const courses = [
   { title: 'Intro to Web Dev', desc: "Learn the basics of web development in this beginner-friendly course. You'll build web pages using HTML, style them with CSS, and add interactivity with JavaScript. You'll also discover how to host your site online. By the end, you'll have created a complete website and gained essential web development skills.", icon: <FaCode size={100} color="#fff" />, bg: '#3c5fde' },
@@ -20,9 +22,8 @@ const Homepage = () => {
     <div className='w-full h-full lg:min-h-screen'>
        <Navbar />
        <Hero />
-
         <section
-          className={`min-h-screen  py-24 bg-[#fafbfc] px-6 -z-10 mb-[320px] lg:mt-0 mt-32 relative`}
+          className={`min-h-screen  py-24 bg-[#fafbfc] px-6 z-10 lg:mb-[202px] mb-20 lg:mt-0 mt-32 relative`}
           >
         <h2 className="text-4xl font-bold text-center mb-2 mt-10">Our Courses</h2>
 
@@ -42,10 +43,12 @@ const Homepage = () => {
           <img src={bg} className=' w-full h-full object-cover rounded-l-3xl' />
         </div>
 
-         <div className='w-max p-5 rounded-lg bg-[#f74364] px-6 text-white lg:mt-36 mt-36 font-semibold place-self-center'>
+         <div className='w-max p-5 rounded-lg bg-[#f74364] px-6 text-white lg:mt-36 mt-16 font-semibold place-self-center'>
               Browse Courses
           </div>
         </section>
+        <About />
+        <WhyUs />
 
 
     </div>
