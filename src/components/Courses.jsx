@@ -26,16 +26,16 @@ const CoursesSection = ({title, desc, icon, bg, index}) => {
         offset: ["start center", "start start"]
     })
 
-    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [0,0,0] : [0,randomRotation, 5])
+    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [0,0,0.9] : [0,randomRotation, 5])
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [1,1,0.9] : [0,1, 1])
-    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0,1, 1])
+    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [1,1,1] : [0,1, 1])
    
 
   return (
           <motion.div
             ref={targetRef}
             className="sticky lg:h-[320px] h-max w-full max-w-4xl z-10"
-            style={{rotate, top: `${isSmallScreen ? 100 : 130 + index * isSmallScreen ? 10 : 40}px`, scale, opacity,}}
+            style={{rotate, top: `${isSmallScreen ? 100 : 130 + index * isSmallScreen ? 200 : 40}px`, scale, opacity,}}
           >
 
             <div className="bg-white h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row  border-2 border-gray-100">
