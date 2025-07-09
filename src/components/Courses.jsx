@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 
 
@@ -6,32 +6,36 @@ import { motion, useScroll, useTransform } from 'motion/react';
 
 const CoursesSection = ({title, desc, icon, bg, index}) => {
     const targetRef = useRef(null)
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    const [randomRotation] = useState(() => Math.floor(Math.random() * 11) - 5);
+
+  // Responsive handling
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 650);
+    };
+    
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
     const {scrollYProgress} = useScroll({
         target:targetRef,
         offset: ["start center", "start start"]
     })
 
-    const isSmallScreen = window.innerWidth < 650
-
-
-    function getRandomNumber() {
-        return Math.floor(Math.random() * 11) - 10;
-    }
-
-    const randomNum = getRandomNumber();
-
-    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], [0,randomNum, 5])
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [1,1,1] : [0,1, 1])
+    const rotate = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [0,0,0] : [0,randomRotation, 5])
+    const scale = useTransform(scrollYProgress, [0, 0.5, 1], isSmallScreen ? [1,1,0.9] : [0,1, 1])
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0,1, 1])
-
-    console.log(isSmallScreen )
+   
 
   return (
           <motion.div
             ref={targetRef}
             className="sticky lg:h-[320px] h-max w-full max-w-4xl z-10"
-            style={{rotate, top: `${isSmallScreen ? 20 : 130 + index * isSmallScreen ? 0 : 40}px`, scale, opacity,}}
+            style={{rotate, top: `${isSmallScreen ? 100 : 130 + index * isSmallScreen ? 10 : 40}px`, scale, opacity,}}
           >
 
             <div className="bg-white h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row  border-2 border-gray-100">

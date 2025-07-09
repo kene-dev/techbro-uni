@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import CoursesSection from '../components/Courses'
 import { FaCode, FaPalette, FaLaptopCode } from 'react-icons/fa';
-import { motion} from 'motion/react';
+import { motion, useScroll, useTransform} from 'motion/react';
 import bg from '../assets/bg-hero1.png';
 
 const courses = [
@@ -12,17 +12,22 @@ const courses = [
   { title: 'Frontend Frameworks', desc: "Learn the basics of web development in this beginner-friendly course. You'll build web pages using HTML, style them with CSS, and add interactivity with JavaScript. You'll also discover how to host your site online. By the end, you'll have created a complete website and gained essential web development skills.", icon: <FaLaptopCode size={100} color="#fff" />, bg: '#f74364' },
 ];
 
+
+
 const Homepage = () => {
+ 
   return (
     <div className='w-full h-full lg:min-h-screen'>
        <Navbar />
        <Hero />
 
-        <section  className="min-h-screen  py-24 bg-[#fafbfc] px-6 -z-10 mb-[320px] lg:mt-0 mt-32 relative">
+        <section
+          className={`min-h-screen  py-24 bg-[#fafbfc] px-6 -z-10 mb-[320px] lg:mt-0 mt-32 relative`}
+          >
         <h2 className="text-4xl font-bold text-center mb-2 mt-10">Our Courses</h2>
 
         <motion.div
-        className="relative max-w-full mx-auto h-max flex flex-col items-center justify-center py-20">
+        className="max-w-full mx-auto h-max flex flex-col items-center justify-center py-20">
           {
             courses.map((course, i) => (
               <CoursesSection key={i} index={i} {...course} />
