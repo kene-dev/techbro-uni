@@ -45,10 +45,10 @@ const WhyUs = () => {
     }
 
   return (
-    <div className='w-full min-h-screen bg-offwhite lg:px-10 flex flex-col items-center justify-center gap-10 px-5 py-10 '>
+    <div className='w-full min-h-screen bg-offwhite lg:px-10 flex flex-col items-center justify-center gap-10 px-5 py-10 lg:mt-20'>
         <div className='flex flex-col text-center'>
             <h4 className='text-lg font-bold text-[#f74364]'>Why Our Courses</h4>
-            <h1 className='lg:text-[50px] text-[30px] text-[#1f2f54]'>What Makes Us Different</h1>
+            <h1 className='lg:text-[50px] text-[30px] text-[#1f2f54] font-bold'>What Makes Us Different</h1>
         </div>
         <div className='w-full h-full flex flex-col-reverse lg:flex-row items-start gap-4'>
 

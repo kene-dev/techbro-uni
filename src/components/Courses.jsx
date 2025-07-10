@@ -43,19 +43,21 @@ const CoursesSection = ({title, desc, icon, bg, index}) => {
                 {icon}
               </div>
 
-              <div className=" w-full p-8 flex-1 flex flex-col justify-between">
+              <div className="w-full lg:p-12 p-4 py-7  flex-1 flex flex-col justify-between">
+
                 <div>
                   <h3 className="text-3xl font-bold mb-4">{title}</h3>
                   <p className="text-gray-600 text-md leading-relaxed">{desc}</p>
                 </div>
-                <div className='flex items-center gap-5'>
+
+                <div className='w-full flex items-center gap-5'>
                   <button className="mt-6 px-6 py-3 bg-transparent border-[1px] border-black text-black rounded-xl hover:bg-opacity-80 transition w-fit">
                     N150,0000
                   </button>
 
-                  <div className=" flex items-center gap-1 mt-6 px-6 py-3 bg-black text-white  rounded-xl hover:bg-opacity-80 transition w-fit">
+                  <div className=" flex items-center justify-center gap-1 mt-6 px-2 py-3 bg-black text-white  rounded-xl hover:bg-opacity-80 transition w-full lg:w-[150px]">
                     <MdTimer className='text-white w-5 h-5' />
-                    1 month
+                    <p>1 month</p>
                   </div>
                 </div>
               </div>
