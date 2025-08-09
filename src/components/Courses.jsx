@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { MdTimer } from "react-icons/md";
-
-
+import { Link } from 'react-router';
 
 
 const CoursesSection = ({title, desc, icon, bg, index}) => {
@@ -38,7 +37,7 @@ const CoursesSection = ({title, desc, icon, bg, index}) => {
             className="sticky lg:h-[320px] h-max w-full max-w-4xl cursor-pointer z-50"
             style={{rotate, top: `${isSmallScreen ? 100 : 130 + index * isSmallScreen ? 40 : 40}px`, scale, opacity,}}
           >
-            <div className="bg-blue-50 h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row  border-2 border-gray-100">
+            <Link to={`singleCourse/${title}`} className="bg-blue-50 h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row  border-2 border-gray-100">
               <div className="lg:h-full h-[150px] lg:w-1/3 flex items-center justify-center" style={{ backgroundColor: bg }}>
                 {icon}
               </div>
@@ -62,7 +61,7 @@ const CoursesSection = ({title, desc, icon, bg, index}) => {
                 </div>
               </div>
 
-            </div>
+            </Link>
 
           </motion.div>
 

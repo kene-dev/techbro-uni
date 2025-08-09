@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router"
 import Homepage from "./pages/Homepage"
 import { useEffect } from "react";
 import Lenis from "lenis";
+import SingleCourse from "./pages/SingleCourse";
 
 function App() {
 useEffect(() => {
@@ -17,6 +18,7 @@ useEffect(() => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
+      <Route path="singleCourse/:name" element={<SingleCourse />} />
     </Routes>
   )
 }

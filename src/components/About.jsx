@@ -25,7 +25,7 @@ const About = () => {
         <div className='w-full h-full'>
             <div className="w-full lg:h-full h-max px-5 lg:px-0 py-10 lg:py-0">
                 <div className='lg:w-2/3 mx-auto h-full flex flex-col gap-4 items-start justify-center leading-snug'>
-                    <h4 className='text-lg font-bold text-[#f74364]'>About Us</h4>
+                    <h4 className='text-lg font-bold text-primary'>About Us</h4>
                     <h1 className='lg:text-[50px] text-[30px] text-[#1f2f54] font-bold'>The Techbro University mission</h1>
                     <motion.p
                      variants={{ visible: { transition: { staggerChildren: 0.02 } } }}
@@ -44,7 +44,7 @@ const About = () => {
                     <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.8 }}
-                    className='w-max p-5 rounded-lg bg-[#f74364] hover:bg-[#1c52bd] duration-300 px-6 text-white mt-6 font-semibold'>
+                    className='w-max p-5 rounded-lg bg-primary hover:bg-new-blue duration-300 px-6 text-white mt-6 font-semibold'>
                         Start your Journey
                     </motion.button>
                 </div>

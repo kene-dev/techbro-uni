@@ -4,7 +4,7 @@ import bgGirl from '../assets/hero-boy2.png';
 
 const Hero = () => {
   return (
-    <div className='w-full h-full lg:h-[700px] flex flex-col lg:flex-row items-center  px-5 lg:px-0 mt-20 lg:mt-0'>
+    <div id='home' className='w-full h-full lg:h-[700px] flex flex-col lg:flex-row items-center  px-5 lg:px-0 mt-20 lg:mt-0'>
 
         <div className="w-full lg:h-full h-[400px]">
             <div className='lg:w-2/3 mx-auto h-full flex flex-col gap-4 items-start justify-center leading-snug'>
