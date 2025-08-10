@@ -14,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
   const isSingleCourse = location.pathname.includes('/singleCourse');
 
-  console.log(location)
+  console.log(`${location.pathname+location.hash}`)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +45,17 @@ const Navbar = () => {
     window.scrollTo({ top: y, behavior: 'smooth' });
     setOpen(false);
   };
+
+
+  useEffect(() => {
+    // When on the homepage and a hash is present (e.g., /#courses),
+    // scroll smoothly to that section.
+    if (location.pathname === '/' && location.hash) {
+      const id = location.hash.replace('#', '');
+      // Defer to the next animation frame to ensure the DOM is ready
+      requestAnimationFrame(() => scrollToId(id));
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <>
