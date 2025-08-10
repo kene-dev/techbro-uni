@@ -59,7 +59,7 @@ const Navbar = () => {
 
   return (
     <>
-    <div className={`lg:w-[80%] h-[80px] lg:h-[100px] fixed z-[700] lg:top-6 top-3 inset-0 mx-auto ${visible ? 'bg-white/40 backdrop-blur-md' : 'bg-transparent'} rounded-[20px] drop-shadow-sm flex items-center justify-between lg:px-10 px-5 duration-300`}>
+    <div className={`lg:w-[85%] h-[80px] lg:h-[100px] fixed z-[700] lg:top-6 top-3 inset-0 mx-auto ${visible ? 'bg-white/40 backdrop-blur-md' : 'bg-transparent'} rounded-[20px] drop-shadow-sm flex items-center justify-between lg:px-10 px-5 duration-300`}>
 
       <div className='w-max flex items-center'>
         <img src={logo} className='w-20 h-20 -ml-4 lg:-ml-0' />
@@ -71,12 +71,11 @@ const Navbar = () => {
         {navItems.slice('0,2').map((item => {
           if (isSingleCourse) {
               return (
-                <li key={item.id} className='w-full'>
+                <li key={item.id}>
                   <Link
                     to={`/#${item.id}`}
                     onClick={() => setOpen(false)}
-                         className={`${item.id === "contact" ? 'w-full p-2 rounded-lg bg-[#f74364] px-6 text-white'  : 'w-full text-left font-semibold hover:opacity-80 focus:outline-none'}`}
-                  >
+                    className={`${item.id === "contact" ? 'w-full p-2 rounded-lg bg-[#f74364] px-6 text-white'  : 'w-full text-left font-semibold hover:opacity-80 focus:outline-none'}`}>
                     {item.label}
                   </Link>
                 </li>
@@ -84,7 +83,7 @@ const Navbar = () => {
             }
 
             return (
-              <li key={item.id} className='w-full'>
+              <li key={item.id}>
                 <button
                   onClick={() => scrollToId(item.id)}
                   className={`${item.id === "contact" ? 'w-max p-2 rounded-lg bg-[#f74364] px-6 text-white'  : 'w-full text-left font-semibold hover:opacity-80 focus:outline-none'}`}
@@ -94,13 +93,7 @@ const Navbar = () => {
                 </li>
               );
           
-}))}
-        
-          {/* <li>Home</li>
-          <li>Courses</li>
-          <li>Why Us</li>
-          <li>Teachers</li> */}
-          {/* <li className='w-max p-2 rounded-lg bg-[#f74364] px-6 text-white'>Contact Us</li> */}
+        }))}
         </ul>
       </nav>
 
